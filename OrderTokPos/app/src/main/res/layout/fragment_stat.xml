@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentPackage.StatFragment">
+
+    <ListView
+        android:id="@+id/statCategoryListView"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/statCategoryListView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/todayButton"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/btn_bg"
+            android:text="오늘"
+            android:textColor="@color/btn_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/dailyButton"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/btn_bg"
+            android:text="일간"
+            android:textColor="@color/btn_text"
+            app:layout_constraintStart_toEndOf="@+id/todayButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/weeklyButton"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/btn_bg"
+            android:text="주간"
+            android:textColor="@color/btn_text"
+            app:layout_constraintStart_toEndOf="@+id/dailyButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/monthlyButton"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/btn_bg"
+            android:text="월간"
+            android:textColor="@color/btn_text"
+            app:layout_constraintStart_toEndOf="@+id/weeklyButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <im.delight.android.webview.AdvancedWebView
+            android:id="@+id/statWebView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weeklyButton">
+
+        </im.delight.android.webview.AdvancedWebView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

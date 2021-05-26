@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="bg">#ffffff</color>
+    <color name="bg_2">#e6e6e6</color>
+
+
+    <!--language_btn-->
+    <color name="language_bg">#b3fdfdfd</color>
+    <color name="language_bg2">#dddddddd</color>
+
+
+    <color name="language_text">#431601</color>
+    <color name="btn_bg">#ec6d00</color>
+    <color name="btn_bg2">#88ec6d00</color>
+    <color name="btn_text">#ffffff</color>
+
+    <color name="text">#431601</color>
+</resources>

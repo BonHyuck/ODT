@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 부트스트랩 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.1.0.js"></script>
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- CHART.JS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+		html
+			{-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
+				font-family: 'Noto Sans', sans-serif;
+			}
+
+		html, body{
+			padding:0;
+			margin:0;
+			overflow:hidden;
+			font-size:15px;
+		}
+
+		a, a:hover{
+			text-decoration: none;
+			color:black;
+		}
+
+        .menuListTitle{
+            font-weight: bold;
+            border-bottom : 2px solid black;
+            font-size : 13px;
+        }
+
+        .menuListItem{
+            height:30px;
+            border-bottom : 2px solid #cccccc;
+            font-size : 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid row justify-content-center no-gutters">
+    <div class="col-8">
+        <canvas id="myChart" width="300" height="150" style="height:300px;"></canvas>
+        <div class="col-12 row justify-content-between" style="height=70px;">
+            <div class="col-4 row justify-content-center" id="profitBox">
+                <h5 class="text-center d-block col-12" id="profitTitle">
+                </h5>
+                <h6 class="text-center d-block col-8" id="profitNumber"></h6><h6>&nbsp;만원</h6>
+            </div>
+            <div class="col-4 row justify-content-center" id="tableNumberBox" style="border-right:2px solid #cccccc; border-left:2px solid #cccccc">
+                <h5 class="text-center d-block col-12"  id="tableTitle">
+                    테이블 개수
+                </h5>
+                <h6 class="text-center d-block col-8" id="tableNumber"></h6><h6>&nbsp;개</h6>
+            </div>
+            <div class="col-4 row justify-content-center" id="paymentBox">
+                <h5 class="text-center d-block col-12" id="paymentTitle">
+                    결제 방식
+                </h5>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="font-size:12px;" >카드</th>
+                        <th scope="col" style="font-size:12px;">현금</th>
+                        <th scope="col" style="font-size:12px;">전체</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="payWithCard" style="font-size:12px;"></td>
+                        <td id="payWithCash" style="font-size:12px;"></td>
+                        <td id="payWithSome" style="font-size:12px;"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <canvas id="paymentChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-4" id="menuList">
+        <div class="col-12 row justify-content-center">
+            <div class="col-1 text-center menuListTitle">#</div>
+            <div class="col-8 text-center menuListTitle">메뉴 이름</div>
+            <div class="col-2 text-center menuListTitle">수량</div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+//        var serverInfo = "http://222.231.28.42/";
+//        var storeInfo = 1;
+ //       var selectedDate = "monthly";
+  //      var selectedCategoryId = 0;
+    //    var tableNumber = 20;
+      //  var nowLabel = "";
+//        var prevLabel = "";
+  //      var nowType = "";
+    //    var prevType = "";
+        var serverInfo = Android.getServerInfo();
+        var selectedDate = Android.getSelectedDate();
+        var storeInfo = Android.getStoreId();
+        var selectedCategoryId = Android.getSelectedCategory();
+        var tableNumber = Android.getTableNumber();
+        if(selectedDate=="today"){
+            nowLabel = "오늘";
+            prevLabel = "어제";
+            nowType = "line";
+            prevType = "line";
+            $("#profitTitle").text("오늘 매출");
+        }else if(selectedDate=="daily"){
+            nowLabel = "이번 주";
+            prevLabel = "저번 주";
+            nowType = "bar";
+            prevType = "line";
+            $("#profitTitle").text("오늘 매출");
+        }else if(selectedDate=="weekly"){
+            nowLabel = "이번 달";
+            prevLabel = "저번 달";
+            nowType = "bar";
+            prevType = "line";
+            $("#profitTitle").text("1주 간 매출");
+        }else if(selectedDate=="monthly"){
+            nowLabel = "올해";
+            prevLabel = "작년";
+            nowType = "bar";
+            prevType = "line";
+            $("#profitTitle").text("1달 간 매출");
+        }
+        $("#tableNumber").text(tableNumber);
+        $.ajax({
+            url : `${serverInfo}orderTokPos/statInfo.php`,
+            type: "POST",
+            data : {storeId:storeInfo, selectedDate:selectedDate, selectedCategoryId:selectedCategoryId}
+        })
+        .done(function(json){
+            console.log(json);
+            var realJson = JSON.parse(json);
+            console.log(realJson.now);
+            var totalProfit = realJson.profit;
+            $("#profitNumber").text(totalProfit/10000.00);
+            var labelArray = new Array();
+            var nowArray = new Array();
+            var prevArray = new Array();
+            $.each(realJson.now, function(index, data){
+                console.log(data.statLabels);
+                labelArray[index] = data.statLabels;
+                if(data.statTotal == null||data.statTotal==""){
+                    nowArray[index] = 0;
+                }else{
+                    nowArray[index] = data.statTotal;
+                }
+            });
+            $.each(realJson.prev, function(index, data){
+                console.log(data.prevStatTotal)
+                if(data.prevStatTotal==null){
+                    prevArray[index] = 0;
+                }else{
+                    prevArray[index] = data.prevStatTotal;
+                }
+            });
+
+            $.each(realJson.menu, function(index, data){
+                var html = `<div class="col-12 row justify-content-center">
+                <div class="col-1 text-center menuListItem">${index+1}</div>
+                <div class="col-8 text-center menuListItem">${data.menuName}</div>
+                <div class="col-2 text-center menuListItem">${data.menuCount}</div>
+                </div>`;
+                $("#menuList").append(html);
+            });
+
+            // 메인 차트 생성
+            var mainChart = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(mainChart, {
+                type:'line',
+                // The data for our dataset
+                data: {
+                    labels: labelArray,
+                    datasets: [{
+                        label: nowLabel,
+                        borderColor: 'rgb(255, 99, 132)',
+                        fill: false,
+                        data: nowArray,
+                        lineTension:0
+                    }, {
+                        label: prevLabel,
+                        borderColor: 'rgb(99, 132, 255)',
+                        data: prevArray,
+                        fill: false,
+                        type:'line',
+                        lineTension : 0
+                    }]
+                },
+                // Configuration options go here
+                options: {
+
+                }
+            });
+            var paymentTotal = Number(realJson.method['payCard'])+Number(realJson.method['payCash']);
+            var cardPercent = (Math.round((realJson.method['payCard']*100)/paymentTotal)/100.00)*100.00;
+            var cashPercent = (Math.round((realJson.method['payCash']*100)/paymentTotal)/100.00)*100.00;
+            if(paymentTotal==0){
+                cardPercent = 0;
+                cashPercent = 0;
+            }
+
+            var cardPercentText = cardPercent.toFixed(1);
+            var cashPercentText = cashPercent.toFixed(1);
+            $("#payWithCard").text(realJson.method['payCard']+" ("+cardPercentText+"%)");
+            $("#payWithCash").text(realJson.method['payCash']+" ("+cashPercentText+"%)");
+            console.log(realJson.method['payCash']+"("+cashPercent+"%)");
+            $("#payWithSome").text(paymentTotal);
+
+
+
+        }).fail(function(){
+            Android.reload();
+        }
+        );
+    </script>
+</body>
+</html>

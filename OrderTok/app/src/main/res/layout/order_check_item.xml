@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1000dp"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/orderCheckOneName"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="TextView"
+            android:textColor="@color/text"
+            android:textSize="24dp" />
+
+        <LinearLayout
+            android:layout_width="321dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orderCheckMinus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/trumpet"
+                android:text="-"
+                android:textColor="@color/btn_text"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/orderCheckOneCount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/text"
+                android:textSize="26dp" />
+
+            <Button
+                android:id="@+id/orderCheckPlus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/trumpet"
+                android:text="+"
+                android:textColor="@color/btn_text"
+                android:textSize="24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="321dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/orderCheckOnePrice"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="24dp"
+                android:gravity="right"
+                android:text="TextView"
+                android:textColor="@color/text"
+                android:textSize="26dp" />
+
+            <Button
+                android:id="@+id/orderCheckOneCancel"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="-24dp"
+                android:background="@color/btn_bg"
+                android:gravity="center"
+                android:text="Button"
+                android:textColor="@color/btn_text"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/categoryResetButton"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="@color/btn_bg"
+        android:text="재설정"
+        android:textColor="@color/btn_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/checkAllButton"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/btn_bg"
+        android:text="전체 삭제"
+        android:textColor="@color/btn_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/categoryResetButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/checkOldOrderButton"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="@color/btn_bg"
+        android:text="지난 주문"
+        android:textColor="@color/btn_text"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryResetButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

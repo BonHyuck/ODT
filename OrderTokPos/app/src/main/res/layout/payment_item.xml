@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="980dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/paymentNumberText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/paymentDateText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/paymentTimeText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/paymentCodeText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/paymentNameText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/paymentAmountText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/paymentMethodText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+</LinearLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1000dp"
+    android:layout_height="640dp"
+    android:background="@color/btn_bg"
+    tools:context=".OptionDetailActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/bg"
+        android:layout_margin="4dp"
+        >
+
+        <LinearLayout
+            android:layout_width="530dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/btn_bg"
+            >
+
+            <LinearLayout
+                android:layout_width="526dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/bg"
+                >
+
+                <ImageView
+                    android:id="@+id/optionDetailImgView"
+                    android:layout_width="520dp"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="20dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/optionDetailExp"
+                    android:layout_width="423dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="TextView"
+                    android:textColor="@color/text"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/optionDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:background="@color/btn_bg"
+                android:paddingTop="16dp"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/btn_text"
+                android:textSize="28dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/optionDetailMinus"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/circle"
+                    android:text="-"
+                    android:textColor="@color/btn_bg"
+                    android:textSize="32dp" />
+
+                <TextView
+                    android:id="@+id/optionDetailCount"
+                    android:layout_width="280dp"
+                    android:layout_height="72dp"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/text"
+                    android:textSize="32dp" />
+
+                <Button
+                    android:id="@+id/optionDetailPlus"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/circle"
+                    android:text="+"
+
+                    android:textColor="@color/btn_bg"
+                    android:textSize="32dp"  />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/optionDetailListView"
+                android:layout_width="432dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:numColumns="2"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/optionDetailPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="32dp"
+                android:text="TextView"
+                android:textColor="@color/text"
+                android:textSize="36dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/optionDetailCancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg_01"
+                    android:text="Button"
+                    android:textColor="@color/btn_bg"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/optionDetailAddButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/btn_bg"
+                    android:text="Button"
+                    android:textColor="@color/btn_text"
+                    android:textSize="24dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

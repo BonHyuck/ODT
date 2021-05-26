@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentPackage.CalendarFragment" >
+
+    <ImageButton
+        android:id="@+id/minusCalendarButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/before"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/plusCalendarButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/calendarTitle"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="2020년 01월"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/plusCalendarButton"
+        app:layout_constraintStart_toEndOf="@+id/minusCalendarButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="일"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="월"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="화"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="수"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="목"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="금"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="토"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+
+    <GridView
+        android:id="@+id/calendarGridView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:numColumns="7"
+        android:stretchMode="columnWidth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

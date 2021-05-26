@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border">
+
+    <TextView
+        android:id="@+id/justTitle"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:text="메뉴 이름"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setEditListView" />
+
+    <TextView
+        android:id="@+id/setOneMenuName"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/justTitle"
+        app:layout_constraintTop_toTopOf="@+id/justTitle" />
+
+    <TextView
+        android:id="@+id/justCount"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:text="메뉴 수량"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/justTitle" />
+
+    <TextView
+        android:id="@+id/setOneMenuCount"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/justCount"
+        app:layout_constraintStart_toEndOf="@+id/setOneMenuMinus"
+        app:layout_constraintTop_toTopOf="@+id/justCount" />
+
+    <Button
+        android:id="@+id/setOneMenuMinus"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/btn_bg"
+        android:fontFamily="monospace"
+        android:text="━"
+        android:textAlignment="center"
+        android:textColor="@color/btn_text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/justCount"
+        app:layout_constraintStart_toEndOf="@+id/justCount"
+        app:layout_constraintTop_toBottomOf="@+id/setOneMenuName" />
+
+    <Button
+        android:id="@+id/setOneMenuPlus"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/btn_bg"
+        android:text="+"
+        android:textColor="@color/btn_text"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/setOneMenuCount"
+        app:layout_constraintStart_toEndOf="@+id/setOneMenuCount"
+        app:layout_constraintTop_toTopOf="@+id/setOneMenuMinus"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <TextView
+        android:id="@+id/justPrice"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:text="메뉴 가격"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/justCount" />
+
+    <TextView
+        android:id="@+id/setOneMenuPrice"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/justPrice"
+        app:layout_constraintStart_toEndOf="@+id/justPrice"
+        app:layout_constraintTop_toTopOf="@+id/justPrice" />
+
+    <Button
+        android:id="@+id/setOneMenuCancel"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/border"
+        android:text="취소"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/justPrice" />
+
+    <Button
+        android:id="@+id/setOneMenuConfirm"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/btn_bg"
+        android:text="완료"
+        android:textColor="@color/btn_text"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/setOneMenuCancel"
+        app:layout_constraintTop_toBottomOf="@+id/setOneMenuPrice" />
+
+    <ListView
+        android:id="@+id/setEditListView"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:divider="@color/btn_bg"
+        android:dividerHeight="2dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
